@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/newColor"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:text="Bienvenue sur votre ToDoList"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="-100dp"
+        android:fontFamily="casual"
+        android:textFontWeight="1000"
+        android:textColor="@color/ivory"
+        />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:src="@drawable/todo_logo" />
+
+
+    <TextView
+        android:fontFamily="casual"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Votre nom"
+        android:layout_marginTop="50dp"
+
+       />
+    <EditText
+        android:fontFamily="casual"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textSize="25dp"
+        />
+    <Button
+        android:id="@+id/btnValiderAccueil"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/blue"
+        android:text="Valider"
+        android:fontFamily="casual"
+        android:textSize="20dp"
+        android:textColor="@color/ivory"
+        />
+</LinearLayout>
