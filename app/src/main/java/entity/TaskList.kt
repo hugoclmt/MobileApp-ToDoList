@@ -15,4 +15,8 @@ class TaskList (){
     fun getListOfTask(): MutableList<Task> {
         return listOfTasks
     }
+
+    fun toggleTaskDone(task: Task){
+        task.toggleDone()
+    }
 }
