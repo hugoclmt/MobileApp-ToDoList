@@ -5,79 +5,72 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".SecondMainActivity"
     android:background="@color/newColor"
-    >
+    android:orientation="vertical"
+    tools:context=".SecondMainActivity">
 
     <TextView
         android:layout_width="150dp"
         android:layout_height="30dp"
         android:text="TodoList Portable"
-        android:textSize="18sp"
-        />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/nomUtilisateurTodoList"
         android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
-        android:textSize="20sp"
-        android:layout_marginTop="5dp"
-        />
+        android:textSize="20sp" />
 
     <TextView
-        android:layout_width="300dp"
+        android:layout_width="400dp"
         android:layout_height="45dp"
-        android:text="Il vous reste x tâches à réalisées"
-        android:textSize="20sp"
-        android:layout_marginTop="5dp"
         android:layout_gravity="center"
+        android:layout_marginTop="25dp"
         android:gravity="center"
-        />
+        android:text="Il vous reste x tâches à réalisées"
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="35dp"
         android:layout_marginBottom="15dp"
-        >
+        android:orientation="horizontal">
 
         <EditText
-            android:layout_width="200dp"
-            android:layout_height="45dp"
-            android:text="Nouvelle tâche"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
             android:layout_gravity="start"
-            android:textSize="20sp"
             android:layout_marginLeft="10dp"
-            />
+            android:text="Nouvelle tâche"
+            android:textSize="20sp" />
 
         <Spinner
             android:layout_width="50dp"
             android:layout_height="45dp"
-            android:layout_marginLeft="5dp"
-            />
+            android:layout_marginLeft="15dp" />
 
         <Button
-            android:layout_width="130dp"
-            android:layout_height="45dp"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="80dp"
             android:text="Ajouter"
-            android:textSize="20sp"
-            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
             android:textColor="@color/ivory"
-            />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <ProgressBar
-        android:layout_margin="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:progress="0"
-        android:max="100"
-        android:indeterminate="false"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="50dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0" />
 
 </LinearLayout>
