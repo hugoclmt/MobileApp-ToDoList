@@ -42,24 +42,29 @@
         android:orientation="horizontal">
 
         <EditText
-            android:layout_width="100dp"
+            android:id="@+id/text_task"
+            android:layout_width="290dp"
             android:layout_height="48dp"
             android:layout_gravity="start"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="30dp"
             android:text="Nouvelle tâche"
             android:textSize="20sp" />
 
         <Spinner
-            android:layout_width="50dp"
+            android:id="@+id/spinner_priority"
+            android:layout_width="184dp"
             android:layout_height="45dp"
-            android:layout_marginLeft="15dp" />
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:spinnerMode="dropdown" />
 
         <Button
-            android:layout_width="150dp"
+            android:id="@+id/add_task"
+            android:layout_width="wrap_content"
             android:layout_height="48dp"
+            android:layout_gravity="end"
             android:layout_marginLeft="80dp"
             android:text="Ajouter"
-            android:layout_gravity="center"
             android:textColor="@color/ivory"
             android:textSize="20sp" />
     </LinearLayout>
