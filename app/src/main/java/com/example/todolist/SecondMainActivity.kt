@@ -1,9 +1,11 @@
 package com.example.todolist
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ListView
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
@@ -16,6 +18,7 @@ import entity.TaskList
 import entity.User
 
 class SecondMainActivity: AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -52,25 +55,32 @@ class SecondMainActivity: AppCompatActivity() {
 
         val btnaddTask = findViewById<Button>(R.id.add_task)
 
-        var tasks = taskList.getListOfTask()
+        val listView = findViewById<ListView>(R.id.task_list_view)
 
+        val taskAdapterList = mutableListOf<String>()
 
+        val arrayAdapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_list_item_1,
+            taskAdapterList
+        )
 
-
-
-
+        listView.adapter = arrayAdapter
 
         btnaddTask.setOnClickListener {
-            val textTask = textTask.text.toString()
+            val taskDescription = textTask.text.toString()
             val selectedTaskPriority = spinner.selectedItem.toString().toInt()
-            if (textTask.isNotBlank() && (selectedTaskPriority in 1..5)) {
+            if (taskDescription.isNotBlank() && (selectedTaskPriority in 1..5)) {
                 idTask++
-                val task = Task(idTask,textTask,selectedTaskPriority)
+                val task = Task(idTask,taskDescription,selectedTaskPriority)
                 taskList.addTask(task)
-                tasks.forEach { task ->
-                    val taskDetails = "ID: ${task.id}, Description: ${task.description}, Niveau: ${task.level}, Fait: ${task.isDone}"
-                    Toast.makeText(this, taskDetails, Toast.LENGTH_SHORT).show()
-                }
+
+                taskAdapterList.add("${task.description} (priority : ${task.level})")
+                arrayAdapter.notifyDataSetChanged()
+
+                textTask.setText("")
+                spinner.setSelection(0)
+
             }else{
                 Toast.makeText(this, "Veuillez remplir tout les champs",Toast.LENGTH_SHORT).show()
             }
